@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Orange clock</title>
+    <link rel="stylesheet" href="/css/normalize.min.css">
+    <link rel="stylesheet" href="/css/orange-clock.css">
+
+</head>
+
+<body>
+    <!-- partial:index.partial.html -->
+    <div class="clock">
+        <div class="middle"></div>
+        <div class="middle1"></div>
+        <div id="hour" class="hour"></div>
+        <div id="minute" class="minute"></div>
+        <div id="second" class="second"></div>
+    </div>
+    <!-- partial -->
+    <script src="/js/orange-clock.js"></script>
+
+</body>
+
+</html>

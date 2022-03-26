@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="zh">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="/css/my.css" rel="stylesheet">
+
+    <style>
+        .progress-bar {
+            overflow: visible;
+            !important
+        }
+        
+        .bg-success {
+            background-color: rgba(232, 221, 203, 1) !important;
+            color: rgba(3, 22, 52, 1);
+        }
+        
+        .bg-info {
+            background-color: rgba(205, 179, 128, 1) !important;
+            color: rgba(3, 22, 52, 1);
+        }
+        
+        .bg-warning {
+            background-color: rgb(24, 194, 191) !important;
+            color: rgba(3, 22, 52, 1);
+        }
+
+        .bg-danger {
+            background-color: #76CBE0 !important;
+            color: rgba(3, 22, 52, 1);
+        }
+    </style>
+
+    <script>
+        function mGetDate() {
+            var date = new Date();
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var d = new Date(year, month, 0);
+            return d.getDate();
+        }
+
+        function changeP() {
+            flashBar();
+            nIntervId = setInterval(flashBar, 60000);
+        }
+
+        function flashBar() {
+            thisDBar = document.getElementById("thisD");
+            thisMBar = document.getElementById("thisM");
+            thisYBar = document.getElementById("thisY");
+            now = new Date();
+            dayFirst = new Date().setHours(0, 0, 0, 0);
+            diffDay = now - dayFirst;
+            dayWidth = diffDay / 864000;
+            thisDBar["style"].width = parseInt(dayWidth) + '%';
+            thisDBar.innerHTML = "今天已经过去 " + thisDBar["style"].width;
+            yearFirst = new Date().setMonth(0, 0);
+            diffYear = now - yearFirst;
+            yearWidth = diffYear / 315360000;
+            thisYBar["style"].width = parseInt(yearWidth) + '%';
+            thisYBar.innerHTML = "今年已经过去 " + thisYBar["style"].width;
+            monthFirst = new Date();
+            monthFirst.setDate(1);
+            monthFirst.setHours(0, 0, 0, 0);
+            diffMonth = now - monthFirst;
+            monthWidth = diffMonth / (mGetDate() * 864000)
+            thisMBar["style"].width = parseInt(monthWidth) + '%';
+            thisMBar.innerHTML = "这个月已经过去 " + thisMBar["style"].width;
+            // console.log(thisMBar["style"].width);
+
+            {% if life %}
+            thisLBar = document.getElementById("thisL");
+            birth = new Date();
+            birth.setHours(0, 0, 0, 0);
+            birth.setYear({{ life.year }});
+            birth.setDate({{ life.month }}, {{ life.day }});
+
+            diffLife = now - birth;
+            lifeWidth = diffLife / ({{ life.long }} * 315360000);
+            thisLBar["style"].width = parseInt(lifeWidth) + '%';
+            thisLBar.innerHTML = "今生已经过去 " + thisLBar["style"].width;
+
+            {% endif %}
+        }
+    </script>
+
+    <title>Bar</title>
+</head>
+
+<body style="padding: 10px" onload="changeP();">
+
+    <div class="d-grid gap-2">
+        <div class="progress" style="height: 45px;">
+            <div id="thisD" class="progress-bar bg-success bg-success-svg" role="progressbar" style="width: 0%;"> 今天已经过去 </div>
+        </div>
+        <div class="progress " style="height: 45px;">
+            <div id="thisM" class="progress-bar bg-info bg-info-svg" role="progressbar" style="width: 0%">这个月已经过去</div>
+        </div>
+        <div class="progress" style="height: 45px;">
+            <div id="thisY" class="progress-bar bg-warning bg-warning-svg" role="progressbar" style="width: 0%">今年已经过去</div>
+        </div>
+
+        {% if life %}
+        <div class="progress" style="height: 45px;">
+            <div id="thisL" class="progress-bar bg-danger bg-danger-svg" role="progressbar" style="width: 0%">今生已经过去</div>
+        </div>
+        {% endif %}
+
+    </div>
+
+    <script src="/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

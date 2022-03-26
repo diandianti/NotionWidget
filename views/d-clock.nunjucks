@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Digital Clock</title>
+    <link rel="stylesheet" href="/css/dclock.css">
+
+</head>
+
+<body>
+    <!-- partial:index.partial.html -->
+    <div id="clock" class="light">
+        <div class="display">
+            <div class="weekdays"></div>
+            <div class="ampm"></div>
+            <div class="alarm"></div>
+            <div class="digits"></div>
+        </div>
+    </div>
+
+    <!-- JavaScript Includes -->
+    <script src="/js/jquery-1.10.1.min.js"></script>
+    <script src="/js/moment.min.js"></script>
+    <!-- partial -->
+    <script src="/js/dclock.js"></script>
+
+</body>
+
+</html>

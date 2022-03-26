@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css?family=Pacifico");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: #f8c985; */
+}
+
+.clock {
+    background: #F68657;
+    width: 85vmin;
+    height: 85vmin;
+    border-radius: 50%;
+    position: relative;
+}
+
+.clock:before {
+    content: "";
+    position: absolute;
+    margin: auto;
+    width: 3%;
+    height: 12%;
+    background: #70bd63;
+    left: 0;
+    right: 0;
+    top: -10%;
+    z-index: -1;
+    transform: rotate(10deg);
+}
+
+.clock:after {
+    content: "";
+    position: absolute;
+    margin: auto;
+    width: 8%;
+    height: 16%;
+    background: #70bd63;
+    left: 0;
+    right: 15%;
+    top: -10%;
+    z-index: -1;
+    transform: rotate(-40deg);
+    border-radius: 100% 30% 50% 0;
+}
+
+.middle1 {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 5%;
+    height: 5%;
+    background: #f46a30;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.middle {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 5%;
+    height: 5%;
+    background: #f36327;
+    border-radius: 50%;
+}
+
+.middle:before {
+    content: "";
+    position: absolute;
+    background: #f57c48;
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    left: 400%;
+    top: 150%;
+    box-shadow: -20vmin -10vmin 0 0 #f57c48, -10vmin -24vmin 0 0 #f57c48, 4vmin 10vmin 0 0 #f57c48, -20vmin 14vmin 0 0 #f57c48, -30vmin 4vmin 0 0 #f57c48;
+}
+
+.middle:after {
+    content: "";
+    position: absolute;
+    background: #f57c48;
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    left: 400%;
+    top: 150%;
+    box-shadow: -26vmin -16vmin 0 0 #f57c48, 6vmin -14vmin 0 0 #f57c48, -10vmin 8vmin 0 0 #f57c48, -4vmin 18vmin 0 0 #f57c48, 12vmin -5vmin 0 0 #f57c48;
+}
+
+.hour,
+.second,
+.minute {
+    position: absolute;
+    margin: auto;
+    left: 49%;
+    bottom: 50%;
+    background: #ab3909;
+    width: 2%;
+    height: 40%;
+    transform: rotate(0);
+    transform-origin: 50% 100%;
+}
+
+.minute {
+    transform: rotate(0);
+    height: 48%;
+    background: #db490c;
+}
+
+.second {
+    background: #f9a987;
+    width: 1%;
+    left: 49.5%;
+    transform: rotate(0);
+    height: 48%;
+}

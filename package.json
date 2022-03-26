@@ -1,0 +1,19 @@
+{
+  "name": "notion-widgets",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "compression": "^1.7.4",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "helmet": "^5.0.2",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "nunjucks": "^3.2.3"
+  }
+}
