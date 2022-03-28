@@ -6,7 +6,7 @@ router.get("/clock", async(req, res) => {
         if (req.query.type === "orange") {
             res.render('clock/orange-clock');
         } else if (req.query.type === "flip") {
-            res.render('clock/flip-clock');
+            res.render('clock/flip-clock', { color: req.query.color });
         } else {
             res.render('clock/d-clock');
         }
