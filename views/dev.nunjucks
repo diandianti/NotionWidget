@@ -64,8 +64,7 @@
                     {% for wg in main.wgs %}
                     <div class="col  align-items-start">
                         <div>
-                            <h4 class="fw-bold mb-0"><a href={{ wg.href }}> {{ wg.nameZh }}
-                                <br> {{ wg.nameEn }}</a></h4>
+                            <h4 class="fw-bold mb-0"><a href={{ wg.href }}> {{ wg.name }}</a></h4>
                         </div>
                     </div>
                     {% endfor %}
