@@ -55,7 +55,7 @@
         </header>
 
         <main class="px-3">
-            <h1>Notion Widgets</h1>
+            <h1 id="myHeader">Notion Widgets</h1>
         </main>
 
         <footer class="mt-auto text-white-50">
@@ -63,5 +63,12 @@
     </div>
 
 </body>
+<script src='/js/jquery-3.6.0.min.js'></script>
+<script>
+    setTimeout(() => {
+        $("#myHeader")[0].innerText = "Goto Release Note"
+        window.location.href = "https://dianti.notion.site/Notion-Widget-Release-Note-d9beedc6bda94ad4919363d60c6a745f"
+    }, 3000);
+</script>
 
 </html>
