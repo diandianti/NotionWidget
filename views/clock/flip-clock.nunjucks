@@ -5,6 +5,19 @@
     <meta charset="UTF-8">
     <title>Flip Clock</title>
     <link rel="stylesheet" href="/css/my-flip.css">
+<style>
+html {
+      height: 100vh;
+}
+body {
+      display:flex;
+      height: 80vh;
+}
+.tick {
+  align-self: center;
+  margin: 0 auto;
+}
+</style>
 
 </head>
 

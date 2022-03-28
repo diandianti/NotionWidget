@@ -1,7 +1,7 @@
 @import 'flip.min.css';
 .tick {
-    font-size: 1rem;
-    white-space: wrap;
+    font-size: 4vw;
+    white-space: nowrap;
     font-family: arial, sans-serif;
 }
 
@@ -60,7 +60,7 @@ body {
 }
 
 .tick-flip-panel {
-    background-color: #3c3e3c !important;
+    background-color: rgb(194, 194, 93) !important;
 }
 
 .tick-flip {
