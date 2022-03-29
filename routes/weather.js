@@ -44,8 +44,14 @@ router.get("/weather", async(req, res) => {
 
                 //console.log(main);
                 res.render("weather", { main: main });
+            }).catch(err => {
+                return res.status(500).send("Wrong City");
             })
-        })
+        }).catch(err => {
+                return res.status(500).send("Wrong City");
+            }
+
+        )
 
     } catch (error) {
         console.error(error);
