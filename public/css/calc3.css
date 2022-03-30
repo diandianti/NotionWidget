@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body {
+    background: #f5f5f5;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Alata', sans-serif;
+}
+
+#container {
+    height: auto;
+    width: 350px;
+    background: #ffffff;
+    box-shadow: 0px 0px 15px 6px rgba(74, 74, 74, 0.09);
+    max-width: 90%;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.output-bar
+{
+    margin-bottom: 10px;
+    border-bottom: 2px solid #E40B53;
+    text-align: right;
+    padding: 5px;
+    position: relative;
+    
+   
+}
+.output-bar i
+{
+    position: absolute;
+    left:0;
+    top: 0;
+    font-size: 20px;
+    background-color: #E40B53;
+    padding: 5px;
+    border-radius: 100%;
+    color: #ffff;
+    transition: 0.3s;
+    
+}
+.output-bar #fetch
+{
+   font-size: 40px;
+   color:#E40B53;
+   width: 100%;
+   border: none;
+   outline: none;
+   background-color: transparent;
+   transition: 0.3s ease-in-out;
+   text-align: right;
+
+}
+.output-bar p
+{
+    font-size: 14px;
+    color: #fc588f;
+    overflow: hidden;
+    float: right;
+    width: 90%;
+    overflow: hidden;
+    
+    
+}
+.input-bar {
+    width: 100%;
+    display: grid;
+    grid-gap: 5px;
+}
+
+.griditem {
+    background-color: #eeeeee;
+    text-align: center;
+    padding: 20px;
+    font-size: 24px;
+    color: #2d4059;
+    border-radius: 10px;
+    transition:0.3s;
+    cursor: pointer;
+    
+}
+.griditem:hover
+{
+    background-color: #e6e6e6;
+}
+
+#item16 {
+    grid-row: 1;
+    grid-column: 4;
+}
+
+#item19,#item18,#item17,#item16,#item12,#item8,#item4 
+{
+background-color:#00a7fba1;
+}
+#item19:hover,#item18:hover,#item17:hover,#item16:hover,#item12:hover,#item8:hover,#item4:hover 
+{
+background-color:#00a7fbb9;
+}
+
+#item1 {
+    grid-column: 3/span 2;
+    background-color: #fd0054;
+    color: #f5f5f5;
+    
+}
+.output-bar i:hover
+{
+    background-color: #725AC1;
+}
+#item1:hover
+{
+    background-color: #e40b53;
+    cursor: pointer;
+}
