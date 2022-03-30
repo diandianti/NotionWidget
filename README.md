@@ -22,7 +22,8 @@
 - cd express && npm install
 - npm dev
 - 以clock API为例 访问 https:your-domain/clock
-** npm dev启动的服务器没有任何的debug和防护措施，所以你可能要自己重写dev-server.js **
+
+* npm dev启动的服务器没有任何的debug和防护措施，所以你可能要自己重写dev-server.js *
 
 ## vercel
 - fork这个项目
