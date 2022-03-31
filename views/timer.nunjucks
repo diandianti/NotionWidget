@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+
+    <style>
+        body {}
+        
+        #display {
+            display: flex;
+            padding: 10px auto;
+            width: 145px;
+            font-size: 45px;
+            border-style: solid;
+            border-radius: 10px;
+            background-color: #F9E69E;
+            border-color: #fff;
+            <!-- border-color: #5B94A8;
+            -->
+        }
+        
+        .inputbox {
+            width: 60px;
+            height: 70px;
+            font-size: 45px !important;
+            text-align: center;
+            border: none;
+            color: #5B94A8;
+            border-radius: 10px;
+            background-color: #F9E69E;
+        }
+        
+        .split {
+            padding: 5px 0 0 0;
+            vertical-align: middle;
+        }
+        
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        
+        .buttons {
+            padding: 10px 0 0 0;
+            width: 100px;
+            text-align: center;
+            height: 30px;
+            vertical-align: middle;
+        }
+        
+        .icon-color {
+            color: #554951 !important;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div id="display">
+            <input class="inputbox" type="number" id="inMin" name="inMin" placeholder="00" value=0>
+            <div class="split">:</div>
+            <input class="inputbox" type="number" id="inSec" name="inSec" placeholder="00" value=0>
+        </div>
+    </div>
+    <div class="buttons">
+        <!-- <img src="play.svg" id="startb" style="width:35px; vertical-align:middle; color: red;"></img>
+    <img src="stop.svg" id="endb" style="width:25px; vertical-align:middle;"></img> -->
+        <i class="fa-light fa fa-play fa-xl icon-color" id="startb" onclick="start()"></i>
+        <i class="fa-solid fa-arrow-rotate-left fa-xl icon-color" id="endb" onclick="end()"></i>
+    </div>
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js" integrity="sha512-rCjfoab9CVKOH/w/T6GbBxnAH5Azhy4+q1EXW5XEURefHbIkRbQ++ZR+GBClo3/d3q583X/gO4FKmOFuhkKrdA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+    var mins = 0;
+    var secs = 0;
+    var timer;
+    var run = 0;
+
+    function end() {
+        console.log("end");
+        clearInterval(timer);
+        $('#inMin')[0].value = mins;
+        $('#inSec')[0].value = secs;
+        run = 0;
+        $('#startb')[0].style["color"] = '#554951';
+    }
+
+    function start() {
+        var inMin = parseInt($("#inMin")[0].value);
+        var inSec = parseInt($("#inSec")[0].value);
+        var seconds = inMin * 60 + inSec;
+
+        if (seconds == 0) {
+            return;
+        }
+        if (run === 1) {
+            return;
+        }
+
+        run = 1;
+        mins = inMin;
+        secs = inSec;
+
+        $('#startb')[0].style["color"] = 'rgb(255, 255, 255)';
+        var statSec = inSec;
+        console.log(statSec);
+        timer = setInterval(function() {
+            seconds--;
+            if (statSec != 0)
+                statSec--;
+            else
+                statSec = 59;
+            $("#inMin")[0].value = Math.floor(seconds / 60);
+            $("#inSec")[0].value = statSec;
+            if (seconds == 0) {
+                console.log('d');
+                clearInterval(timer);
+                $('#startb')[0].style["color"] = '#554951';
+                run = 0;
+            }
+        }, 1000)
+    }
+    $('#inMin').mousewheel(function(event) {
+        if (parseInt(this.value) === 0 && parseInt(event.deltaY) < 0) {
+            return
+        }
+        if (parseInt(this.value) === 99 && parseInt(event.deltaY) > 0) {
+            return
+        }
+        this.value = parseInt(this.value) + parseInt(event.deltaY);
+    });
+    $('#inSec').mousewheel(function(event) {
+        if (parseInt(this.value) === 0 && parseInt(event.deltaY) < 0) {
+            return
+        }
+        if (parseInt(this.value) === 59 && parseInt(event.deltaY) > 0) {
+            this.value = 0;
+            $("#inMin")[0].value = parseInt($("#inMin")[0].value) + 1;
+            return
+        }
+        this.value = parseInt(this.value) + parseInt(event.deltaY);
+    });
+</script>
+
+</html>

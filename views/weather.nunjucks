@@ -1,0 +1,61 @@
+<!-- origenal  https://codepen.io/shayanea/pen/oGOPOd -->
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{ mian.city }}</title>
+    <link rel="stylesheet" href="/css/weather.css">
+
+    <style>
+        .day1 {
+            width: 48px;
+            height: 48px;
+        }
+        
+        .day2 {
+            width: 40px;
+            height: 40px;
+        }
+        
+        .day3 {
+            width: 40px;
+            height: 40px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- partial:index.partial.html -->
+    <div class="card">
+        <div class="city-name">{{ main.city }}</div>
+        <ul class="days" style="padding: 0 1vw">
+            <li>
+                <div class="today"> {{ main.day1.t }}<span class="degree">&#8451;</span> </div>
+                <!-- <div class="icons sunny"></div> -->
+                <img src={{ main.day1.svg }} class="day1"></img>
+            </li>
+            <li></li>
+            <li></li>
+            <li>
+                <span class="day-name">明天</span>
+                <div class="tempeture"> {{ main.day2.t }} <span class="degree">&#8451;</span> </div>
+                <!-- <div class="icons rainy"></div> -->
+                <img src={{ main.day2.svg }} class="day2"></img>
+            </li>
+            <li></li>
+            <li>
+                <span class="day-name">后天</span>
+                <div class="tempeture"> {{ main.day3.t }} <span class="degree">&#8451;</span> </div>
+                <!-- <div class="icons cloudy"></div> -->
+                <img src={{ main.day3.svg }} class="day3"></img>
+            </li>
+
+        </ul>
+    </div>
+    <!-- partial -->
+
+</body>
+
+</html>

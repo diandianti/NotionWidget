@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flip Clock</title>
+    <link rel="stylesheet" href="/css/my-flip.css">
+<style>
+html {
+      height: 100vh;
+}
+body {
+      display:flex;
+      height: 80vh;
+}
+.tick {
+  align-self: center;
+  margin: 0 auto;
+}
+.tick-flip-panel {
+    background-color: rgb({{ color }}) !important;
+}
+</style>
+
+</head>
+
+<body>
+
+    <div class="tick" data-did-init="handleTickInit">
+        <div data-layout="horizontal fit">
+            <span data-key="hours" data-transform="pad(00)" data-view="flip"></span>
+            <span data-view="text" data-key="sep" class="tick-text-inline"></span>
+            <span data-key="minutes" data-transform="pad(00)" data-view="flip"></span>
+            <span data-view="text" data-key="sep" class="tick-text-inline"></span>
+            <span data-key="seconds" data-transform="pad(00)" data-view="flip"></span>
+        </div>
+    </div>
+
+</body>
+
+<script src="/js/flip.min.js"></script>
+<script src='/js/jquery-3.6.0.min.js'></script>
+
+<script>
+    function handleTickInit(tick) {
+        // start interval (default is 1 second) and update clock with current time
+        Tick.helper.interval(function() {
+            var d = Tick.helper.date();
+            tick.value = {
+                sep: ':',
+                hours: d.getHours(),
+                minutes: d.getMinutes(),
+                seconds: d.getSeconds()
+            };
+        });
+    }
+</script>
+
+</html>

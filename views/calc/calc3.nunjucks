@@ -1,0 +1,57 @@
+<!--Original URL: [https://codepen.io/Bipul_np/pen/poybZLo]-->
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Modern Calculator</title>
+    <link rel="stylesheet" href="/css/calc3.css">
+
+</head>
+
+<body>
+    <!-- partial:index.partial.html -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <body id="main">
+
+        <div id="container">
+            <div class="output-bar">
+                <i class="fas fa-moon" id="light"></i>
+                <p id="retrive">0</p>
+                <input id="fetch" value="0" readonly>
+
+            </div>
+            <div class="input-bar">
+                <div class="griditem" id="item19">C</div>
+                <div class="griditem" id="item18">(</div>
+                <div class="griditem" id="item17">)</div>
+                <div class="griditem" id="item16">÷</div>
+                <div class="griditem" id="item15" name="numo">7</div>
+                <div class="griditem" id="item14" name="numo">8</div>
+                <div class="griditem" id="item13" name="numo">9</div>
+                <div class="griditem" id="item12">✕</div>
+                <div class="griditem" id="item11" name="numo">4</div>
+                <div class="griditem" id="item10" name="numo">5</div>
+                <div class="griditem" id="item9" name="numo">6</div>
+                <div class="griditem" id="item8">-</div>
+                <div class="griditem" id="item7" name="numo">1</div>
+                <div class="griditem" id="item6" name="numo">2</div>
+                <div class="griditem" id="item5" name="numo">3</div>
+                <div class="griditem" id="item4">+</div>
+                <div class="griditem" id="item3" name="numo">0</div>
+                <div class="griditem" id="item2" name="numo">.</div>
+                <div class="griditem" id="item1">=</div>
+            </div>
+        </div>
+        <script src="/js/calc3.js">
+        </script>
+    </body>
+
+</html>
+<!-- partial -->
+<!-- <script src="/js/calc3.js"></script> -->
+
+</body>
+
+</html>
