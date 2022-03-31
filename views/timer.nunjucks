@@ -100,19 +100,19 @@
     function start() {
         var inMin = parseInt($("#inMin")[0].value);
         var inSec = parseInt($("#inSec")[0].value);
-        console.log(inMin);
-        console.log(inSec);
         var seconds = inMin * 60 + inSec;
-        mins = inMin;
-        secs = inSec;
-        console.log(seconds);
+
         if (seconds == 0) {
             return;
         }
         if (run === 1) {
             return;
         }
+
         run = 1;
+        mins = inMin;
+        secs = inSec;
+
         $('#startb')[0].style["color"] = 'rgb(255, 255, 255)';
         var statSec = inSec;
         console.log(statSec);
