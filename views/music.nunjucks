@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh" class="h-100">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+    <title>Music</title>
+</head>
+
+<body>
+
+</body>
+
+    <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    {% if main.auto %}
+    <meting-js auto={{ main.auto }}>
+    </meting-js>
+    {% elif main.args %}
+    <meting-js {% for k,v in main.args%} {{ k }} = {{ v }} {% endfor %}></meting-js>
+    {% else %}
+    <meting-js server="netease" type="playlist" id="60198"></meting-js>
+    {% endif %}
+</html>
