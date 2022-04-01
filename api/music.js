@@ -1,6 +1,6 @@
 const app = require("../app");
 const route = require("../routes/music");
 
-app.use("/music/", route);
+app.use("/api/", route);
 
 module.exports = app;
